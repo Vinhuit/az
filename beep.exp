@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+set timeout 5
+set host [lindex $argv 0]
+#spawn ssh -o StrictHostKeyChecking=no caubequay00@${host} "screen -S 'myscreen' -d -m;screen -r 'myscreen' -X stuff $'wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/run3.sh;chmod 777 run3.sh;./run3.sh\n'"
+spawn ssh -o StrictHostKeyChecking=no caubequay00@${host} "screen -S 'myscreen' -d -m;screen -r 'myscreen' -X stuff $'wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/run3.sh;chmod 777 run3.sh;./run3.sh\n'"
+expect {
+	 "yes/no" {
+         send "yes\r"
+         exp_continue
+     }
+    "assword:" {
+         send "Qwertyuiop12@#\r"
+     }
+}
+expect
