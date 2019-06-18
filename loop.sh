@@ -1,5 +1,5 @@
 pip3 install pexpect --user
-for run in {1..20}
+for run in {1..5}
 do
   bash skydevice_conly.sh &
 done
