@@ -1,6 +1,7 @@
 #counter=1
 #name=$(echo $NAME | cut -c4-)
 #counter=${name##+(0)}
+pip3 install pexpect --user
 while true ;
 do
   #if [[ "$counter" -eq 0 ]]; then
