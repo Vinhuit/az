@@ -5,7 +5,11 @@ try:
                     "StrictHostKeyChecking": "no",
                     "UserKnownHostsFile": "/dev/null"})
     hostname = sys.argv[1]
-    name = sys.argv[2]
+    try:
+        name = sys.argv[2]
+    except:
+        name = "Vinh"
+    
     username = 'caubequay00'
     password = 'Qwertyuiop12@#'
     s.login(hostname, username, password)
