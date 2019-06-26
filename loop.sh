@@ -9,3 +9,4 @@ do
   bash skydevice_conly.sh $1 &
   sleep 2
 done
+sleep 900
