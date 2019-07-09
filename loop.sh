@@ -11,7 +11,7 @@ export myip=$(az vm create --name $RANDOM --resource-group $resource --image Ubu
 python nim.py $myip $1
 rm ~/.ssh/known_hosts 
 sleep 2
-for run in {1..85}
+for run in {1..40}
 do
   bash skydevice_conly.sh $1 &
   sleep 2
