@@ -15,7 +15,7 @@ do
 #  az login --tenant 604c1504-c6a3-4080-81aa-b33091104187 --username $user --password Anhvinh12@#
   sleep 2
   numdev=$(az vm list-ip-addresses | jq -r '.[].virtualMachine.name' | wc -l)
-if [ $numdev -lt 86 ]
+if [ $numdev -lt 1000 ]
   then
   for i in `seq 1 5`;
   do
