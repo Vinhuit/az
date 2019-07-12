@@ -11,7 +11,7 @@ echo "Got $STATUS"
 #python nim.py $myip $1
 rm ~/.ssh/known_hosts 
 sleep 2
-for run in {1..50}
+for run in {1..20}
 do
   bash skydevice_conly.sh $1 &
   sleep 2
