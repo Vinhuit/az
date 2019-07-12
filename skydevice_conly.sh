@@ -2,8 +2,8 @@
 #name=$(echo $NAME | cut -c4-)
 #counter=${name##+(0)}
 pip3 install pexpect --user
-while true ;
-do
+#while true ;
+#do
   #if [[ "$counter" -eq 0 ]]; then
   #     user="caubequay00@zrhino.tk"
   #fi
@@ -17,7 +17,7 @@ do
   numdev=$(az vm list-ip-addresses | jq -r '.[].virtualMachine.name' | wc -l)
 if [ $numdev -lt 1000 ]
   then
-  for i in `seq 1 5`;
+  for i in `seq 1 1`;
   do
     myip=0
     export resource=$(az resource list  | jq -r 'first(.[].resourceGroup)')
@@ -37,4 +37,4 @@ fi
 #	  counter=1
   sleep 2
  #fi
-done
+#done
