@@ -15,7 +15,7 @@ for run in {1..20}
 do
   for i in `seq 1 5` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL   --location eastus --cpu 4 --memory 16 --command-line "bash run_3.sh" & done
   sleep 60
-  numx=numx+1
+  numx=$numx+1
   echo $numx
 done
 #rm ~/.ssh/known_hosts 
