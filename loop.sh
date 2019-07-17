@@ -11,10 +11,10 @@ echo "Got $STATUS"
 #python nim.py $myip $1
 #export resource=$(az resource list  | jq -r 'first(.[].resourceGroup)')
 numx=0
-for run in {1..20}
+for run in {1..15}
 do
-  for i in `seq 1 5` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL   --location eastus --cpu 4 --memory 16 --command-line "bash run_3.sh" & done
-  sleep 60
+  for i in `seq 1 7` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL   --location eastus --cpu 4 --memory 16 --command-line "bash run_3.sh" & done
+  sleep 70
 done
 #rm ~/.ssh/known_hosts 
 #sleep 2
