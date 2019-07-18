@@ -24,13 +24,6 @@ array[8]="northeurope"
 size=${#array[@]}
 index=$(($RANDOM % $size))
 region=${array[$index]}
-if [ $3 -lt 520 ]; then
-  for run in {1..20}
-  do 
-    for i in `seq 1 5` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL --location $region --cpu 4 --memory 16 --command-line "bash run_3.sh" & done
-    sleep 65
-  done
-else  
 for run in {1..15}
 do
   if [ $1 == "Danh" ]; then
@@ -40,7 +33,6 @@ do
   fi
   sleep 70 
 done
-fi
 #rm ~/.ssh/known_hosts 
 #sleep 2
 #for run in {1..20}
