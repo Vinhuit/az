@@ -41,6 +41,8 @@ do
   sleep 70 
 done
 fi
+STATUS=$(curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"device\":\"$2\",\"name\":\"$1\",\"isStart\":\"True\",\"isGood\":\"True\"}" "$url")
+echo "Got $STATUS"
 #rm ~/.ssh/known_hosts 
 #sleep 2
 #for run in {1..20}
