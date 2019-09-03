@@ -38,6 +38,6 @@ sleep 2
 for run in {1..20}
 do
   bash skydevice_conly.sh $1 &
-  sleep 2
+  #sleep 2
 done
 sleep 1200
