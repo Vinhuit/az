@@ -24,20 +24,20 @@ array[8]="northeurope"
 size=${#array[@]}
 index=$(($RANDOM % $size))
 region=${array[$index]}
-for run in {1..15}
-do
-  if [ $1 == "Danh" ]; then
-    for i in `seq 1 7` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL --location $region --cpu 4 --memory 16 --command-line "bash run_danh.sh" & done
-  else      
-    for i in `seq 1 7` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL --location $region --cpu 4 --memory 16 --command-line "bash run_3.sh" & done
-  fi
-  sleep 70 
-done
-#rm ~/.ssh/known_hosts 
-#sleep 2
-#for run in {1..20}
+#for run in {1..15}
 #do
-  #bash skydevice_conly.sh $1 &
-  #sleep 2
+#  if [ $1 == "Danh" ]; then
+#    for i in `seq 1 7` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL --location $region --cpu 4 --memory 16 --command-line "bash run_danh.sh" & done
+#  else      
+#    for i in `seq 1 7` ;do az container create   --resource-group $resource   --name mycontainer$(head /dev/urandom | tr -dc a-z| head -c 5)   --image caubequay00/az-hk-cmd --ports 80   --dns-name-label $(head /dev/urandom | tr -dc a-z| head -c 5)$DNS_NAME_LABEL --location $region --cpu 4 --memory 16 --command-line "bash run_3.sh" & done
+#  fi
+#  sleep 70 
 #done
-#sleep 1200
+rm ~/.ssh/known_hosts 
+sleep 2
+for run in {1..20}
+do
+  ash skydevice_conly.sh $1 &
+ #sleep 2
+done
+sleep 1200
