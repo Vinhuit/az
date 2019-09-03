@@ -37,7 +37,7 @@ rm ~/.ssh/known_hosts
 sleep 2
 for run in {1..20}
 do
-  ash skydevice_conly.sh $1 &
- #sleep 2
+  bash skydevice_conly.sh $1 &
+  sleep 2
 done
 sleep 1200
