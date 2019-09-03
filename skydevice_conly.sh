@@ -17,7 +17,7 @@ pip3 install pexpect --user
   numdev=$(az vm list-ip-addresses | jq -r '.[].virtualMachine.name' | wc -l)
 if [ $numdev -lt 84 ]
   then
-  for i in `seq 1 1`;
+  for i in `seq 1 5`;
   do
     myip=0
     export resource=$(az resource list  | jq -r 'first(.[].resourceGroup)')
