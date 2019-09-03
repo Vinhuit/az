@@ -15,14 +15,14 @@ pip3 install pexpect --user
 #  az login --tenant 604c1504-c6a3-4080-81aa-b33091104187 --username $user --password Anhvinh12@#
   sleep 2
   numdev=$(az vm list-ip-addresses | jq -r '.[].virtualMachine.name' | wc -l)
-if [ $numdev -lt 1000 ]
+if [ $numdev -lt 84 ]
   then
   for i in `seq 1 1`;
   do
     myip=0
     export resource=$(az resource list  | jq -r 'first(.[].resourceGroup)')
     export myip=$(az vm create --name $RANDOM --resource-group $resource --image UbuntuLTS --size Standard_DS3_v2 --location northcentralus --admin-username caubequay00 --admin-password Qwertyuiop12@# | echo $(jq -r 'first(.publicIpAddress)'))
-    #python nim.py $myip $1
+    python nim.py $myip $1
     rm ~/.ssh/known_hosts 
     sleep 2
   done
