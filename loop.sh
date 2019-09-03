@@ -1,9 +1,9 @@
 pip3 install pexpect --user
 export resource=$(az resource list  | jq -r 'first(.[].resourceGroup)')
 if [ $3 -gt 499 ]; then
-  url="http://xjsonserver01.herokuapp.com/rerunaccount/""$3"
+  url="http://jsonserver01.herokuapp.com/rerunaccount/""$3"
 else
-  url="http://xjsonserver01.herokuapp.com/temp/""$3"
+  url="http://jsonserver01.herokuapp.com/temp/""$3"
 fi
 STATUS=$(curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"device\":\"$2\",\"name\":\"$1\",\"isStart\":\"True\"}" "$url")
 echo "Got $STATUS"
