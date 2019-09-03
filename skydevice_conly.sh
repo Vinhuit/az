@@ -27,7 +27,7 @@ if [ $numdev -lt 84 ]
     sleep 2
   done
 else
-	#az vm list-ip-addresses | jq -r '.[].virtualMachine.network.publicIpAddresses[].ipAddress' | xargs -i python nim.py {}
+	az vm list-ip-addresses | jq -r '.[].virtualMachine.network.publicIpAddresses[].ipAddress' | xargs -i python nim.py {}
         sleep 60
 fi
   echo "done"
