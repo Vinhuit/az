@@ -17,12 +17,13 @@ try:
     s.prompt()             # match the prompt
     print(s.before)        # print everything before the prompt.
     s.sendline('sudo su')
-    s.prompt()
+    s.set_unique_prompt()
     s.sendline('sleep 1')
+    s.set_unique_prompt()
     s.sendline('screen -S "myscreen" -d -m')
-    s.prompt()
+    s.set_unique_prompt())
     s.sendline('sleep 1')
-    s.prompt()
+    s.set_unique_prompt()
     if name =="Danh":
         s.sendline('screen -r "myscreen" -X stuff $"wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/run_danh.sh;chmod 777 run_danh.sh;./run_danh.sh\n"')
     elif name == "Mai":
@@ -32,6 +33,8 @@ try:
     else:
         s.sendline('screen -r "myscreen" -X stuff $"wget https://raw.githubusercontent.com/Vinhuit/az/master/setupnimenv.sh;chmod 777 setupnimenv.sh;./setupnimenv.sh\n"')
     #s.sendline('screen -r "myscreen" -X stuff $"wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/run_3.sh;chmod 777 run_3.sh;./run_3.sh\n"')
+   
+    s.sendline("exit")
     s.prompt()
     print(s.before)
     s.logout()
