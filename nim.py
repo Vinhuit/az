@@ -16,6 +16,9 @@ try:
     s.sendline('uptime')   # run a command
     s.prompt()             # match the prompt
     print(s.before)        # print everything before the prompt.
+    s.sendline('sudo su')
+    s.prompt()
+    s.sendline('sleep 1')
     s.sendline('screen -S "myscreen" -d -m')
     s.prompt()
     s.sendline('sleep 1')
