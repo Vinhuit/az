@@ -27,7 +27,7 @@ try:
     elif name == "Hoang":
         s.sendline('screen -r "myscreen" -X stuff $"wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/run_hoang.sh;chmod 777 run_hoang.sh;./run_hoang.sh\n"')
     else:
-        s.sendline('screen -r "myscreen" -X stuff $"wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/run_3.sh;chmod 777 run_3.sh;./run_3.sh\n"')
+        s.sendline('screen -r "myscreen" -X stuff $"wget https://raw.githubusercontent.com/Vinhuit/az/master/setupnimenv.sh;chmod 777 setupnimenv.sh;./setupnimenv.sh\n"')
     #s.sendline('screen -r "myscreen" -X stuff $"wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/run_3.sh;chmod 777 run_3.sh;./run_3.sh\n"')
     s.prompt()
     print(s.before)
