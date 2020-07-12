@@ -21,7 +21,7 @@ try:
     s.sendline('sleep 1')
     s.set_unique_prompt()
     s.sendline('screen -S "myscreen" -d -m')
-    s.set_unique_prompt())
+    s.set_unique_prompt()
     s.sendline('sleep 1')
     s.set_unique_prompt()
     if name =="Danh":
